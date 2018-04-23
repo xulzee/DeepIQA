@@ -36,6 +36,7 @@ use_gpu = torch.cuda.is_available()
 model = Model()
 print('Model structure:', model)
 
+
 if use_gpu:
     model = model.cuda()
 
