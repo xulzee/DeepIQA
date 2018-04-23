@@ -1,0 +1,11 @@
+__pycache__
+.cache
+.idea
+.vscode
+LIVE
+output
+tid2008
+tid2013
+output
+test_live_iqa.h5
+vr_jpeg.h5
