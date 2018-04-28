@@ -25,7 +25,7 @@ def test():
         label_txt = label.data[0].cpu().numpy()
 
         outputfile = open(
-            '/home/xulzee/Documents/IQA/output/TID2013_cost/test_vr_result_155.txt', 'a+')
+            '/home/xulzee/Documents/IQA/output/TID2013_cost_bn/test_result_177.txt', 'a+')
         outputfile.write(('{} {:.7f} {:.7f}'.format(
             i, output_txt[0], label_txt[0])) + '\r\n')
 
@@ -40,12 +40,12 @@ print('Model structure:', model)
 if use_gpu:
     model = model.cuda()
 
-model_weights_file = '/home/xulzee/Documents/IQA/output/TID2013_cost/155-5.0233284-0.0043344param.pth'
+model_weights_file = '/home/xulzee/Documents/IQA/output/TID2013_cost_bn/177-3.5516537-0.0020451param.pth'
 model.load_state_dict(torch.load(model_weights_file))
 print('load weights from', model_weights_file)
 
 test_dataset = MyDataset(
-    data_file='/media/xulzee/备份/IQA_dataset/vr_jpeg.h5')  # test datasets
+    data_file='/media/xulzee/备份/IQA_dataset/TID2013/test_live_iqa.h5')  # test datasets
 test_dataloader = DataLoader(
     dataset=test_dataset, batch_size=1, shuffle=False, num_workers=0)
 
